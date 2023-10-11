@@ -27,11 +27,18 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
+//app.UseAuthorization();
+
+//app.UseRouting();
+//app.UseEndpoints(endpoints =>
+//{
+//    endpoints.MapHub<FootballUpdatesHub>("/footballupdate");
+//    endpoints.MapControllers();
+//});
 
 app.MapControllers();
 
 app.MapHub<FootballUpdatesHub>("/footballupdate");
-app.UseCors();
+app.UseCors("CorsPolicy");
 
 app.Run();

@@ -22,7 +22,7 @@ public class FootballUpdatesHub : Hub
         {
             var randomMatch = _footballService.GetRandomMatch();
             await Clients.All.SendAsync("ReceiveFootballMatch", randomMatch);
-            await Task.Delay(5000); // Delay for 5 seconds
+            await Task.Delay(4000); // Delay for 5 seconds
         }
     }
 

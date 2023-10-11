@@ -20,9 +20,9 @@ public class FootballUpdatesHub : Hub
 
         while (!_cancellationTokenSource.Token.IsCancellationRequested)
         {
-            var randomMatch = _footballService.GetRandomMatch();
+            var randomMatch = _footballService.GetRandomMatch(); // am using a sample match for my data source
             await Clients.All.SendAsync("ReceiveFootballMatch", randomMatch);
-            await Task.Delay(4000); // Delay for 5 seconds
+            await Task.Delay(4000); // Delay for 4 seconds
         }
     }
 

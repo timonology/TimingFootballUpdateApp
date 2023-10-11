@@ -1,0 +1,29 @@
+<p>football-updates works!</p>
+
+<div class="match-list">
+    <button (click)="stopStreaming()">Stop Streaming</button>
+    <table class="football-match-table">
+        <thead>
+            <tr>
+                <th>Match ID</th>
+                <th>Home Team</th>
+                <th>Away Team</th>
+                <th>Home Score</th>
+                <th>Away Score</th>
+                <th>Status</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let match of matches; let i = index">
+                <td>{{ match.matchId }}</td>
+                <td>{{ match.homeTeam }}</td>
+                <td>{{ match.awayTeam }}</td>
+                <td>{{ match.homeScore }}</td>
+                <td>{{ match.awayScore }}</td>
+                <td>{{ match.status }}</td>
+                <td>{{ match.time }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

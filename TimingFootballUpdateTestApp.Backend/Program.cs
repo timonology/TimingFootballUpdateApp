@@ -1,10 +1,15 @@
+using TimingFootballUpdateTestApp.Backend.Extensions;
 using TimingFootballUpdateTestApp.Backend.Hubs;
+using TimingFootballUpdateTestApp.Backend.Implementations;
+using TimingFootballUpdateTestApp.Backend.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddSignalR();
+builder.Services.AddSingleton<IFootballUpdateService, FootballUpdateService>();
+builder.Services.ConfigureCorsPolicy();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

@@ -7,7 +7,7 @@ public static class CorsPolicyExtensions
         services.AddCors(opt =>
         {
             opt.AddDefaultPolicy(builder => builder
-                .AllowAnyOrigin()
+                .AllowAnyOrigin() // allow any for test sake
                 .AllowAnyMethod()
                 .AllowAnyHeader());
         });
